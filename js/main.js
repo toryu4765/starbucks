@@ -1,27 +1,6 @@
 'use strict'
 
 
-// 검색창 요소
-
-const searchEl = document.querySelector('.search')
-const searchInputEl = searchEl.querySelector('input')
-
-// 검색창 요소를 클릭
-searchEl.addEventListener('click', function () {
-  searchInputEl.focus()
-})
-
-searchInputEl.addEventListener('focus', function () {
-  searchEl.classList.add('focused')
-  searchInputEl.setAttribute('placeholder', '통합검색')
-})
-
-searchInputEl.addEventListener('blur', function () {
-  searchEl.classList.remove('focused')
-  searchInputEl.setAttribute('placeholder', '')
-})
-
-
 
 // 페이지 스크롤
 const badgeEl = document.querySelector('header .badges')
@@ -147,8 +126,3 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, 'show') // 요소가 화면에 뜨면 show 클래스 추가
     .addTo(new ScrollMagic.Controller()) // 컨트롤러에 장면 할당(중요)
 })
-
-
-
-const thisYear = document.querySelector('.this-year') // 올해 년도 계산
-thisYear.textContent = new Date().getFullYear()
